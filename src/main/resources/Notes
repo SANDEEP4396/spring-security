@@ -1,0 +1,8 @@
+Spring Security
+- It helps securing our APIs, microservices from unauthorized access, attacks, and threats.
+
+Authentication
+- It is the process of verifying who you are/valid user or not
+
+Authorization
+- It is the process of identifying you are allowed to access and makes sure you can only access what you are allowed to.
