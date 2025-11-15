@@ -12,4 +12,10 @@ public class UserController {
     public String health(){
         return "HEALTHY";
     }
+
+    @GetMapping("/userDetails")
+    public String userDetails(){
+        return "WELCOME TO Spring Security Demo, Sandeep!";
+    }
+
 }
