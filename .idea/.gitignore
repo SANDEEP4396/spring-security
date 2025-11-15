@@ -4,3 +4,9 @@
 *.log
 /target/
 .idea/
+
+# Ignore lock files (except those you need)
+*.lock
+
+# Ignore binary files
+*.bin
