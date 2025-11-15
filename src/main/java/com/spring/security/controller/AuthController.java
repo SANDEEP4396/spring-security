@@ -20,7 +20,7 @@ public class AuthController {
     private JWTUtil jwtUtil;
 
     @PostMapping("/authenticate")
-    public String generateToken(@RequestBody AuthRequest authRequest){
+    public String generateToken(@RequestBody AuthRequest authRequest) {
 
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(),

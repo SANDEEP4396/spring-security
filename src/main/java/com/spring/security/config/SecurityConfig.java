@@ -23,12 +23,13 @@ public class SecurityConfig {
 
     @Autowired
     private JwtAuthFilter jwtAuthFilter;
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/home/health","/h2-console").permitAll()
+                        .requestMatchers("/home/health", "/h2-console").permitAll()
                         .requestMatchers("/authenticate").permitAll()
                         .anyRequest().authenticated())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)

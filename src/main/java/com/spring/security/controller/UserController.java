@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @GetMapping("/health")
-    public String health(){
+    public String health() {
         return "HEALTHY";
     }
 
     @GetMapping("/userDetails")
-    public String userDetails(){
+    public String userDetails() {
         return "WELCOME TO Spring Security Demo, Sandeep!";
     }
 
