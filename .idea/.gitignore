@@ -1,35 +1,41 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-*.log
-/target/
-.idea/
 
-# Ignore lock files (except those you need)
-*.lock
-
-# Ignore binary files
-*.bin
-
-# Remove tracked IDE/build artifacts from the index (not your local files)
-git rm -r --cached .idea .gradle build out
-
-# If you accidentally tracked other IDE folders
-git rm -r --cached **/*.iml
-
-# Commit the cleanup
-git commit -m "Stop tracking IDE and build artifacts; add .gitignore"
-
-# Push
-git push
-
-
-# Global ignores
+# -----------------------------
+# OS-specific noise
+# -----------------------------
 .DS_Store
 Thumbs.db
-# JetBrains
-*.iml
+
+# -----------------------------
+# Logs & temp files
+# -----------------------------
+*.log
+*.swp
+*.swo
+
+# -----------------------------
+# IntelliJ / JetBrains IDE
+# -----------------------------
 .idea/
+*.iws
+*.ipr
+*.iml
 out/
-# VS Code
-.vscode/
+
+# -----------------------------
+# Gradle caches & build outputs
+# -----------------------------
+.gradle/
+build/
+
+# -----------------------------
+# Keep the Gradle wrapper tracked
+# (order matters—negations must come after ignores)
+# -----------------------------
+!gradle/wrapper/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# -----------------------------
+# Java build by-products (if any)
+# -----------------------------
+# Annotation processors or generated sources can live in build/, which is already ignored.
