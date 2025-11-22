@@ -1,5 +1,6 @@
 package com.spring.security.service;
 
+import com.spring.security.entity.Role;
 import com.spring.security.entity.Users;
 import com.spring.security.repository.UserDetailRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -17,9 +18,17 @@ public class AdminUserCreationService {
                 Users admin = new Users();
                 admin.setUsername("admin");
                 admin.setPassword(passwordEncoder.encode("admin1234"));
-                admin.setRole("ROLE_ADMIN");
+                admin.setRole(Role.ADMIN);
                 userDetailRepository.save(admin);
                 System.out.println("Admin created successfully");
+            }
+            if(userDetailRepository.findByUsername("user").isEmpty()){
+                Users user = new Users();
+                user.setUsername("user");
+                user.setPassword(passwordEncoder.encode("user1234"));
+                user.setRole(Role.USER);
+                userDetailRepository.save(user);
+                System.out.println("User created successfully");
             }
         };
     }

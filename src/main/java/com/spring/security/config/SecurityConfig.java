@@ -1,10 +1,13 @@
 package com.spring.security.config;
 
+import com.spring.security.entity.PermissionsAllowed;
+import com.spring.security.entity.Role;
 import com.spring.security.filters.JwtAuthFilter;
 import com.spring.security.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -31,7 +34,10 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/home/health", "/h2-console").permitAll()
                         .requestMatchers("/authenticate").permitAll()
-                        .requestMatchers("/home/userDetails").hasAnyRole("ADMIN")
+                      //  .requestMatchers("/home/userDetails").hasAnyRole(Role.USER.name())
+                        .requestMatchers(HttpMethod.GET, "/home/**").hasAuthority(PermissionsAllowed.USER_READ.name())
+                        .requestMatchers(HttpMethod.POST, "/home/**").hasAuthority(PermissionsAllowed.USER_WRITE.name())
+                        .requestMatchers(HttpMethod.DELETE,"/home/**").hasAuthority(PermissionsAllowed.USER_DELETE.name())
                         .anyRequest().authenticated())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
