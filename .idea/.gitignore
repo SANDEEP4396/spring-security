@@ -10,3 +10,15 @@
 
 # Ignore binary files
 *.bin
+
+# Remove tracked IDE/build artifacts from the index (not your local files)
+git rm -r --cached .idea .gradle build out
+
+# If you accidentally tracked other IDE folders
+git rm -r --cached **/*.iml
+
+# Commit the cleanup
+git commit -m "Stop tracking IDE and build artifacts; add .gitignore"
+
+# Push
+git push
