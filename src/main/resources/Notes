@@ -9,3 +9,8 @@ Authorization
 
 * As soon as we add "implementation 'org.springframework.boot:spring-boot-starter-security'" a new filter chain called
   Security filter chain gets added which may have multiple filters.
+
+
+ * At the end of the Security filter chain we will have Authorization filter.
+    this will go to Authorization Manager -> It is a Functional interface that just has check() method to check if you have authorized.
+

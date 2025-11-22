@@ -25,7 +25,6 @@ public class AuthController {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(),
                     authRequest.getPassword()));
-
             return jwtUtil.generateToken(authRequest.getUsername());
         } catch (BadCredentialsException e) {
             throw new BadCredentialsException("Username or Password is wrong");

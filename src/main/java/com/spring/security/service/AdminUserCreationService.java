@@ -17,7 +17,7 @@ public class AdminUserCreationService {
                 Users admin = new Users();
                 admin.setUsername("admin");
                 admin.setPassword(passwordEncoder.encode("admin1234"));
-                admin.setRole("ADMIN");
+                admin.setRole("ROLE_ADMIN");
                 userDetailRepository.save(admin);
                 System.out.println("Admin created successfully");
             }

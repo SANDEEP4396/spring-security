@@ -18,7 +18,7 @@ public class JWTUtil {
     private static final String SECRET = "my-super-secret-key-that is-long-enough-123455889!@#";
     private static final SecretKey SECRET_KEY = Keys.hmacShaKeyFor(SECRET.getBytes());
 
-    public String generateToken(final String userName){
+    public String generateToken(final String userName) {
         return Jwts.builder()
                 .subject(userName)
                 .issuedAt(new Date())
@@ -26,6 +26,7 @@ public class JWTUtil {
                 .signWith(SECRET_KEY, HS256)
                 .compact();
     }
+
     public String getUserNameFromJwtToken(final String token){
         return getClaims(token).getSubject();
     }
