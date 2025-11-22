@@ -22,3 +22,14 @@ git commit -m "Stop tracking IDE and build artifacts; add .gitignore"
 
 # Push
 git push
+
+
+# Global ignores
+.DS_Store
+Thumbs.db
+# JetBrains
+*.iml
+.idea/
+out/
+# VS Code
+.vscode/
