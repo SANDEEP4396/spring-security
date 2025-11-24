@@ -20,7 +20,6 @@ Thumbs.db
 *.ipr
 *.iml
 *.xml
-*.gradle
 *.bin
 out/
 
