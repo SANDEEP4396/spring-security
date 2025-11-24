@@ -19,8 +19,6 @@ Thumbs.db
 *.iws
 *.ipr
 *.iml
-*.xml
-*.bin
 out/
 
 # -----------------------------
@@ -31,13 +29,7 @@ build/
 
 # -----------------------------
 # Keep the Gradle wrapper tracked
-# (order matters—negations must come after ignores)
 # -----------------------------
 !gradle/wrapper/
 !gradle/wrapper/gradle-wrapper.jar
 !gradle/wrapper/gradle-wrapper.properties
-
-# -----------------------------
-# Java build by-products (if any)
-# -----------------------------
-# Annotation processors or generated sources can live in build/, which is already ignored.
