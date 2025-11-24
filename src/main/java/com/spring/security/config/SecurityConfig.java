@@ -35,7 +35,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/home/health", "/h2-console").permitAll()
-                        .requestMatchers("/authenticate").permitAll()
+                        .requestMatchers("/authenticate","/register").permitAll()
                       //  .requestMatchers("/home/userDetails").hasAnyRole(Role.USER.name())
 //                        .requestMatchers(HttpMethod.GET, "/home/**").hasAuthority(PermissionsAllowed.USER_READ.name())
 //                        .requestMatchers(HttpMethod.POST, "/home/**").hasAuthority(PermissionsAllowed.USER_WRITE.name())
